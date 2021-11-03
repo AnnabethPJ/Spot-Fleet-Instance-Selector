@@ -1,0 +1,32 @@
+
+div{
+  font-size: 1rem;
+  margin:15px 15px 15px 0px;
+}
+
+.success{
+  color: #00d68f !important;
+  font-size: 1.4rem;
+}
+
+label{
+  font-size: 16px;
+  color: #4d4d4d;
+  display: block;
+  margin-bottom: 5px
+}
+
+button,label,select{
+  cursor: pointer;
+}
+
+.error{
+  color:red;
+  font-size:12px;
+}
+
+.ram-core-div{
+  display:flex;
+}
+
+

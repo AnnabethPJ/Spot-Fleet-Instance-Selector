@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    color:#36455a !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+
+nav{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ddd !important; 
+    background: #232f3e;
+}
+
+.layout-container{
+    width: 70%;
+    margin:auto;
+}
+
+nb-card{
+    box-shadow:15px 15px 10px 10px #e4e9f2 !important;
+}
+
+nb-card-header{
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    color:#e47911 !important;
+}
+
+@media (max-width:768px){
+    .layout-container{
+        width: 100%;
+        margin:auto;
+    } 
+
+    .ram-core-div{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:512px){
+    nav{
+        font-size:1.6rem;
+        padding:5px;
+    }
+
+}

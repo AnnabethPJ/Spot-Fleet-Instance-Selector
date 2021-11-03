@@ -1,0 +1,48 @@
+<nb-card>
+  <nb-card-header>Spot Instance Advisor</nb-card-header>
+  <nb-card-body>
+    <div *ngIf="submitted">
+      <p class="success">Form has been submitted successfully</p>
+    </div>
+    <form [formGroup]="spotAdvisorForm" (ngSubmit)="onSportAdvisorSubmit()">
+      <div>
+        <label>Region:</label>
+        <nb-select class="custom-select" id="inputGroupSelect01" (selectedChange)="onAWSRegionChanged($event)"
+          formControlName="awsRegions">
+          <nb-option *ngFor="let region of regions; let i = index" [value]=region>{{region}}</nb-option>
+        </nb-select>
+      </div>
+
+      <div class="ram-core-div">
+        <div>
+          <label>vCPU (min):</label>
+          <nb-select class="custom-select" id="inputGroupSelect03" (selectedChange)="onCPUChanged($event)"
+            formControlName="cores">
+            <nb-option *ngFor="let core of cores; let i = index" [value]=core>
+              {{core}}
+            </nb-option>
+          </nb-select>
+        </div>
+
+        <div>
+          <label>Memory GiB (min):</label>
+          <input type="number" min="0" nbInput id="inputGroupSelect02" (change)="onRAMChanged($event)"
+            formControlName="ram">
+        </div>
+
+      </div>
+
+      <div>
+        <label>Low interruption rate Instances:</label>
+        <nb-select class="custom-select" id="inputGroupSelect04" (selectedChange)="onInstanceChanged($event)"
+          formControlName="instances">
+          <nb-option *ngFor="let inst of instances; let i = index" [value]=inst>{{inst}}</nb-option>
+        </nb-select>
+      </div>
+
+      <div>
+        <button nbButton status="success" type="submit" [disabled]="spotAdvisorForm.invalid">Submit</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
